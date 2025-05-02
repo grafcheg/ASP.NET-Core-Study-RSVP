@@ -1,0 +1,31 @@
+﻿@model System.Collections.Generic.IEnumerable<ASP.NET_Core_Study___RSVP.Models.GuestResponse>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="">
+<head>
+    <title>Список гостей принявших приглашение</title>
+</head>
+<body>
+    <h2>Список гостей принявших приглашение</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Имя</th><th>email</th><th>Телефон</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (GuestResponse response in Model)
+            {
+                <tr>
+                    <td>@response.Name</td><td>@response.Email</td><td>@response.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
