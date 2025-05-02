@@ -1,0 +1,39 @@
+﻿@model ASP.NET_Core_Study___RSVP.Models.GuestResponse
+@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rsvp Form</title>
+</head>
+<body>
+<form asp-action="RsvpForm" method="post">
+    <div>
+        <label asp-for="Name">Ваше имя:</label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="Email">Ваша email:</label>
+        <input asp-for="Email" />
+    </div>
+    <div>
+        <label asp-for="Phone">Ваш телефон:</label>
+        <input asp-for="Phone" />
+    </div>
+    <div>
+        <label>Участвуете в вечернике?</label>
+        <select asp-for="WillAttend">
+            <option value="">Выберите ответ</option>
+            <option value="true">Да, участвую</option>
+            <option value="false">Нет, не могу прийти</option>
+        </select>
+    </div>
+    <button type="submit">Отправить ответ</button>
+</form>
+</body>
+</html>
