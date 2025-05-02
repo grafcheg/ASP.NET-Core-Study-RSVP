@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ASP.NET_Core_Study___RSVP.Models;
 
@@ -11,8 +10,18 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpGet]
     public ViewResult RsvpForm()
     {
         return View();
+    }
+    
+    [HttpPost]
+    public ViewResult RsvpForm(GuestResponse guestResponse)
+    {
+        // сохраняем ответ гостя на приглашение
+        Repository.AddGuestResponse(guestResponse);
+        
+        return View("Thanks", guestResponse);
     }
 }
